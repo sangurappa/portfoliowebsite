@@ -3,165 +3,431 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
+  <title>Portfolio Website</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="design.css">
 </head>
 <body>
-  <header>
-    <nav>
-        <ul>
-            <li>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Expereince</a>
-                <a href="#leadership">Leadership and Sports</a>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
-    </nav>
-  </header>
 
-  <section id="main">
-  <div class="main_text">
-    <h1>Name</h1>
-    <h2>Hardware Engineer | Data Scientist | Athlete</h2>
-    <p>
-      Bio
-    </p>
-    <div class="main_buttons">
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#leadership">Leadership and Sports</a>
-      <a href="#contact">Contact</a>
+<!-- Background icons (first screen only) -->
+<div class="health_icons" id="healthIcons">
+  <img src="https://cdn-icons-png.flaticon.com/128/11306/11306404.png" class="icon" alt="">
+  <img src="https://cdn-icons-png.flaticon.com/128/5688/5688802.png" class="icon" alt="">
+  <img src="https://cdn-icons-png.flaticon.com/128/10192/10192206.png" class="icon" alt="">
+  <img src="https://cdn-icons-png.flaticon.com/128/14784/14784255.png" class="icon" alt="">
+  <img src="https://cdn-icons-png.flaticon.com/128/2966/2966334.png" class="icon" alt="">
+  <img src="https://cdn-icons-png.flaticon.com/128/10605/10605924.png" class="icon" alt="">
+  <img src="https://cdn-icons-png.flaticon.com/128/6281/6281567.png" class="icon" alt="">
+  <img src="https://cdn-icons-png.flaticon.com/128/17727/17727233.png" class="icon" alt="">
+  <img src="https://cdn-icons-png.flaticon.com/128/4460/4460415.png" class="icon" alt="">
+  <img src="https://cdn-icons-png.flaticon.com/128/1294/1294413.png" class="icon" alt="">
+  <img src="https://cdn-icons-png.flaticon.com/128/8003/8003872.png" class="icon" alt="">
+  <img src="https://cdn-icons-png.flaticon.com/128/7399/7399822.png" class="icon" alt="">
+</div>
+
+<header class="site-header">
+  <nav class="nav-inner">
+    <ul class="navbar">
+      <li><a href="#main">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#leadership">Leadership & Sports</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ECG strip -->
+  <div class="ecg">
+    <svg id="ecgSvg" viewBox="0 0 1000 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><mask id="ecgMask"><rect x="0" y="0" width="1000" height="100" fill="#fff"/></mask></defs>
+      <path class="ecg-line" mask="url(#ecgMask)"
+        d="M 0,70 C 12,70 20,66 24,70 28,74 36,70 52,70
+           L 64,82 84,14 104,86 118,70
+           C 138,70 150,66 162,70 174,74 186,70 208,70
+           C 220,70 228,66 232,70 236,74 244,70 260,70
+           L 272,82 292,14 312,86 326,70
+           C 346,70 358,66 370,70 382,74 394,70 416,70
+           C 428,70 436,66 440,70 444,74 452,70 468,70
+           L 480,82 500,14 520,86 534,70
+           C 554,70 566,66 578,70 590,74 602,70 624,70
+           C 636,70 644,66 648,70 652,74 660,70 676,70
+           L 688,82 708,14 728,86 742,70
+           C 762,70 774,66 786,70 798,74 810,70 832,70
+           C 844,70 852,66 856,70 860,74 868,70 884,70
+           L 896,82 916,14 936,86 950,70
+           C 970,70 982,66 994,70 1000,74 1000,70 1000,70" fill="none"/>
+    </svg>
+  </div>
+</header>
+
+<!-- Backdrop for expanded tiles -->
+<div class="backdrop" id="backdrop"></div>
+
+<!-- HERO -->
+<section id="main" class="hero">
+  <div class="container">
+    <div class="main_text">
+      <h1>Sanskriti Gurappa</h1>
+      <h2>Hardware Engineer | Data Scientist | Athlete</h2>
+      <p>Bio</p>
+      <div class="main_buttons">
+        <a href="#projects" class="btn">Projects</a>
+        <a href="#experience" class="btn">Experience</a>
+        <a href="#leadership" class="btn">Leadership & Sports</a>
+        <a href="#contact" class="btn">Contact</a>
+      </div>
+    </div>
+    <div class="main_photo"><img src="mypic.jpeg" alt="Sanskriti Gurappa"></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-heading">Projects</h2>
+
+    <div class="categories-grid">
+      <div class="category-col">
+        <h3>Business</h3>
+        <div class="tiles vertical">
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>Project X</h3></div>
+            <div class="tile-face back"><div><h3>Project X</h3><p>Company • Year</p><p>Skills…</p><p>Impact…</p></div></div>
+          </div></div>
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>Project Y</h3></div>
+            <div class="tile-face back"><div><h3>Project Y</h3><p>Details…</p></div></div>
+          </div></div>
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>Project Z</h3></div>
+            <div class="tile-face back"><div><h3>Project Z</h3><p>Details…</p></div></div>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="category-col">
+        <h3>Software</h3>
+        <div class="tiles vertical">
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>App A</h3></div>
+            <div class="tile-face back"><div><h3>App A</h3><p>Details…</p></div></div>
+          </div></div>
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>Tool B</h3></div>
+            <div class="tile-face back"><div><h3>Tool B</h3><p>Details…</p></div></div>
+          </div></div>
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>Lib C</h3></div>
+            <div class="tile-face back"><div><h3>Lib C</h3><p>Details…</p></div></div>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="category-col">
+        <h3>Hardware</h3>
+        <div class="tiles vertical">
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>Board A</h3></div>
+            <div class="tile-face back"><div><h3>Board A</h3><p>Details…</p></div></div>
+          </div></div>
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>Sensor B</h3></div>
+            <div class="tile-face back"><div><h3>Sensor B</h3><p>Details…</p></div></div>
+          </div></div>
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>Device C</h3></div>
+            <div class="tile-face back"><div><h3>Device C</h3><p>Details…</p></div></div>
+          </div></div>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="main_photo">
-    <img src="photo.jpg" alt="Name" width="250">
-  </div>
-  </section>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <h2 class="section-heading">Experience</h2>
 
- <section id="projects">
-  <h2>Projects</h2>
-
-  <div class="projects_grid">
-    <div class="project_column">
-      <h3>Business</h3>
-      <div class="project_card">
-        <h4>Project X</h4>
-        <p>Company | Time | Skills</p>
+    <div class="categories-grid">
+      <div class="category-col">
+        <h3>Business</h3>
+        <div class="tiles vertical">
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front">
+              <h3>Internship X</h3>
+            </div>
+            <div class="tile-face back"><div><h3>Internship X</h3><p>Company • Role</p><p>Impact…</p></div></div>
+          </div></div>
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>Intern</h3></div>
+            <div class="tile-face back"><div><h3>Internship Y</h3><p>Company • Role</p><p>Impact…</p></div></div>
+          </div></div>
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>Analyst Z</h3></div>
+            <div class="tile-face back"><div><h3>Analyst Z</h3><p>Company • Role</p><p>Impact…</p></div></div>
+          </div></div>
+        </div>
       </div>
-      <div class="project_card">
-        <h4>Project Y</h4>
-        <p>Company | Time | Skills</p>
-      </div>
-    </div>
 
-    <div class="project_column">
-      <h3>Software</h3>
-      <div class="project_card">
-        <h4>Project A</h4>
-        <p>Company | Time | Skills</p>
+      <div class="category-col">
+        <h3>Software</h3>
+        <div class="tiles vertical">
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>SWE A</h3></div>
+            <div class="tile-face back"><div><h3>SWE A</h3><p>Stack • Results…</p></div></div>
+          </div></div>
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>SWE B</h3></div>
+            <div class="tile-face back"><div><h3>SWE B</h3><p>Stack • Results…</p></div></div>
+          </div></div>
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>SWE C</h3></div>
+            <div class="tile-face back"><div><h3>SWE C</h3><p>Stack • Results…</p></div></div>
+          </div></div>
+        </div>
       </div>
-    </div>
 
-    <div class="project_column">
-      <h3>Hardware</h3>
-      <div class="project_card">
-        <h4>Project B</h4>
-        <p>Company | Time | Skills</p>
-      </div>
-    </div>
-  </div>
- </section>
-
- <section id="experience">
-  <h2>Experience</h2>
-
-  <div class="experience_grid">
-    <div class="experience_column">
-      <h3>Business</h3>
-      <div class="experience_card">
-        <h4>Internship X</h4>
-        <p>Company | Time | Role</p>
-      </div>
-      <div class="experience_card">
-        <h4>Internship Y</h4>
-        <p>Company | Time | Role</p>
-      </div>
-    </div>
-
-    <div class="experience_column">
-      <h3>Software</h3>
-      <div class="experience_card">
-        <h4>Job A</h4>
-        <p>Company | Time | Role</p>
-      </div>
-    </div>
-
-    <div class="experience_column">
-      <h3>Hardware</h3>
-      <div class="experience_card">
-        <h4>Research Project B</h4>
-        <p>Company | Time | Role</p>
+      <div class="category-col">
+        <h3>Hardware</h3>
+        <div class="tiles vertical">
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>Research A</h3></div>
+            <div class="tile-face back"><div><h3>Research A</h3><p>Role • Results…</p></div></div>
+          </div></div>
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>Lab B</h3></div>
+            <div class="tile-face back"><div><h3>Lab B</h3><p>Role • Results…</p></div></div>
+          </div></div>
+          <div class="tile"><button class="close">✕</button><div class="tile-inner">
+            <div class="tile-face front"><h3>Prototype C</h3></div>
+            <div class="tile-face back"><div><h3>Prototype C</h3><p>Role • Results…</p></div></div>
+          </div></div>
+        </div>
       </div>
     </div>
   </div>
- </section>
+</section>
 
- <section id="leadership">
-  <h2>Leadership & Sports</h2>
+<!-- LEADERSHIP & SPORTS (inverted pyramid: 3 over 2) -->
+<section id="leadership">
+  <div class="container">
+    <h2 class="section-heading">Leadership & Sports</h2>
+    <div class="sports-pyramid">
+      <div class="tile"><button class="close">✕</button><div class="tile-inner">
+        <div class="tile-face front"><h3>Club President</h3></div>
+        <div class="tile-face back"><div><h3>Club President</h3><p>Highlights…</p></div></div>
+      </div></div>
 
-  <div class="leadership_grid">
-    <div class="leadership_card">
-      <h4>Club President</h4>
-      <p>Organization | Time</p>
-    </div>
-    <div class="leadership_card">
-      <h4>Event Lead</h4>
-      <p>Organization | Time</p>
-    </div>
+      <div class="tile"><button class="close">✕</button><div class="tile-inner">
+        <div class="tile-face front"><h3>Soccer</h3></div>
+        <div class="tile-face back"><div><h3>Soccer</h3><p>Team • Position…</p></div></div>
+      </div></div>
 
-    <div class="sports_card">
-      <h4>Soccer</h4>
-      <p>Team | Position | Time</p>
-    </div>
-    <div class="sports_card">
-      <h4>Athletics</h4>
-      <p>Event | Time</p>
-    </div>
-  </div>
- </section>
+      <div class="tile"><button class="close">✕</button><div class="tile-inner">
+        <div class="tile-face front"><h3>Athletics</h3></div>
+        <div class="tile-face back"><div><h3>Athletics</h3><p>Event • PR…</p></div></div>
+      </div></div>
 
- <section id="contact">
-  <h2>Get In Touch</h2>
+      <div class="tile"><button class="close">✕</button><div class="tile-inner">
+        <div class="tile-face front"><h3>Hack Club Lead</h3></div>
+        <div class="tile-face back"><div><h3>Hack Club Lead</h3><p>Workshops…</p></div></div>
+      </div></div>
 
-  <p>
-    Ready to collaborate on projects in hardware, software, or business?  
-    Lets connect and build something impactful together.
-  </p>
-
-  <div class="contact_grid">
-   
-    <div class="contact_card">
-      <h3>Email</h3>
-      <p><a href="mailto:email@example.com">email@example.com</a></p>
-    </div>
-
-    <div class="contact_card">
-      <h3>LinkedIn</h3>
-      <p><a href="https://www.linkedin.com/in/profile" target="_blank">Connect with me</a></p>
-    </div>
-
-    <div class="contact-card">
-      <h3>GitHub</h3>
-      <p><a href="https://github.com/username" target="_blank">Check out my code</a></p>
+      <div class="tile"><button class="close">✕</button><div class="tile-inner">
+        <div class="tile-face front"><h3>Volunteer</h3></div>
+        <div class="tile-face back"><div><h3>Volunteer</h3><p>Impact…</p></div></div>
+      </div></div>
     </div>
   </div>
+</section>
 
- </section>
- <footer>
-  <p>&copy; 2025 Name. All rights reserved.</p>
- </footer>
+<!-- CONTACT (flip-in-place only) -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-heading">Get In Touch</h2>
+    <div class="tiles no-expand-tiles">
+      <div class="tile"><div class="tile-inner">
+        <div class="tile-face front"><h3>Email</h3></div>
+        <div class="tile-face back"><div><h3>Email</h3><p><a href="mailto:email@example.com">email@example.com</a></p></div></div>
+      </div></div>
+      <div class="tile"><div class="tile-inner">
+        <div class="tile-face front"><h3>LinkedIn</h3></div>
+        <div class="tile-face back"><div><h3>LinkedIn</h3><p><a href="https://www.linkedin.com/in/profile" target="_blank" rel="noopener">Connect with me</a></p></div></div>
+      </div></div>
+      <div class="tile"><div class="tile-inner">
+        <div class="tile-face front"><h3>GitHub</h3></div>
+        <div class="tile-face back"><div><h3>GitHub</h3><p><a href="https://github.com/username" target="_blank" rel="noopener">Check out my code</a></p></div></div>
+      </div></div>
+    </div>
+  </div>
+</section>
 
+<footer><p>© 2025 Sanskriti Gurappa. All rights reserved.</p></footer>
 
+<div id="modalHost" aria-hidden="true"></div>
+
+<!-- ========== JS ========== -->
+<script>
+/* ECG mask to avoid drawing under nav links */
+(() => {
+  const header = document.querySelector('.site-header');
+  const svg = document.getElementById('ecgSvg');
+  const mask = svg.querySelector('#ecgMask');
+  function updateMask(){
+    [...mask.querySelectorAll('rect[data-block]')].forEach(n => n.remove());
+    const vb = svg.viewBox.baseVal;
+    const rect = header.getBoundingClientRect();
+    header.querySelectorAll('.navbar a').forEach(a => {
+      const r = a.getBoundingClientRect(), pad = 8;
+      const x = ((r.left - rect.left) - pad) / rect.width  * vb.width;
+      const w = (r.width + pad*2) / rect.width * vb.width;
+      const blocker = document.createElementNS('http://www.w3.org/2000/svg','rect');
+      blocker.setAttribute('x', Math.max(0,x));
+      blocker.setAttribute('y', 0);
+      blocker.setAttribute('width', Math.max(0,w));
+      blocker.setAttribute('height', vb.height);
+      blocker.setAttribute('fill', '#000');
+      blocker.setAttribute('data-block','');
+      mask.appendChild(blocker);
+    });
+  }
+  updateMask();
+  window.addEventListener('resize', () => { clearTimeout(window.__ecgMaskT); window.__ecgMaskT=setTimeout(updateMask,120); });
+})();
+
+/* Background healthcare icons: place ALL icons in first viewport */
+(() => {
+  const container = document.getElementById('healthIcons');
+  const icons = Array.from(container.querySelectorAll('.icon'));
+
+  const COLS = 5, ROWS = 5;
+  const PATTERN = [
+    [1,2],[1,4],
+    [2,1],[2,3],[2,5],
+    [3,2],[3,4],
+    [4,1],[4,3],[4,5],
+    [5,2],[5,4]
+  ];
+
+  function shuffle(a){
+    for (let i = a.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function layout(){
+    const headerH = document.querySelector('.site-header')?.offsetHeight || 0;
+    const safeTop  = headerH + 16;
+
+    const W = window.innerWidth;
+    const H = window.innerHeight;  // first viewport only
+    container.style.height = H + 'px';
+
+    const PAD = 24;
+    const cellW = (W - 2*PAD) / COLS;
+    const cellH = (H - safeTop - PAD) / ROWS;
+
+    const centers = PATTERN.map(([r,c]) => ({
+      x: PAD + (c-1)*cellW + cellW/2,
+      y: safeTop + (r-1)*cellH + cellH/2
+    }));
+
+    // pool so every icon gets a slot
+    const pool = [];
+    while (pool.length < icons.length) pool.push(...centers);
+    shuffle(pool);
+
+    icons.forEach((icon, i) => {
+      const t  = pool[i % pool.length];
+      const sz = 64 + Math.random()*28;         // 64–92px
+      const jx = (Math.random()-0.5)*cellW*0.32;
+      const jy = (Math.random()-0.5)*cellH*0.26;
+
+      icon.style.display = 'block';
+      icon.style.position = 'absolute';
+      icon.style.width = sz + 'px';
+      icon.style.height = sz + 'px';
+      icon.style.left = (t.x + jx) + 'px';
+      icon.style.top  = (t.y + jy) + 'px';
+
+      const dur = 12 + Math.random()*6;
+      icon.style.animationDuration = dur + 's';
+      icon.style.animationDelay    = (-Math.random()*dur) + 's';
+    });
+  }
+
+  layout();
+  window.addEventListener('resize', () => {
+    clearTimeout(window.__iconsT);
+    window.__iconsT = setTimeout(layout, 150);
+  });
+})();
+
+/* Neon tiles — expand by default; flip-in-place for .no-expand or .no-expand-tiles */
+(() => {
+  const backdrop = document.getElementById('backdrop');
+  const tiles = document.querySelectorAll('.tile');
+
+  let activeTile = null;
+  let placeholder = null;
+
+  function openTile(tile){
+    // close any existing
+    closeActive();
+
+    // create a placeholder to keep the grid cell occupied
+    placeholder = document.createElement('div');
+    placeholder.className = 'tile-placeholder';
+    placeholder.style.height = tile.offsetHeight + 'px';
+    placeholder.style.borderRadius = getComputedStyle(tile).borderRadius;
+    tile.parentNode.insertBefore(placeholder, tile);
+
+    // float the real tile above everything
+    tile.classList.add('active');
+    document.body.appendChild(tile);
+
+    backdrop.classList.add('show');
+    activeTile = tile;
+  }
+
+  function closeActive(){
+    if (!activeTile) { backdrop.classList.remove('show'); return; }
+
+    // put tile back where it came from and remove placeholder
+    if (placeholder && placeholder.parentNode){
+      placeholder.parentNode.insertBefore(activeTile, placeholder);
+      placeholder.remove();
+      placeholder = null;
+    }
+    activeTile.classList.remove('active');
+    activeTile = null;
+    backdrop.classList.remove('show');
+  }
+
+  tiles.forEach(tile => {
+    tile.addEventListener('click', (e) => {
+      if (e.target.classList.contains('close')) { e.stopPropagation(); closeActive(); return; }
+
+      // tiles inside .no-expand-tiles still flip in place
+      const noExpand = tile.classList.contains('no-expand') || tile.closest('.no-expand-tiles');
+      if (noExpand) { tile.classList.toggle('active'); return; }
+
+      openTile(tile);
+    });
+  });
+
+  backdrop.addEventListener('click', closeActive);
+  window.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeActive(); });
+})();
+</script>
 </body>
 </html>
